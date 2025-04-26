@@ -42,4 +42,8 @@ public class Libro {
     public void SetEstado(Estado estado) {
         this.estado = estado;
     }
+
+    public void cambiarEstado(Estado nuevoEstado) {
+        this.estado = nuevoEstado;
+    }
 }
