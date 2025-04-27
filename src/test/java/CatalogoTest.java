@@ -25,15 +25,15 @@ public class CatalogoTest {
 
     @Test
     void testBuscarPorIsbnExistente() {
-        Optional<Libro> libro = catalogo.buscarLibro("978-3-16-148410-0");
+        Libro libro = catalogo.buscarLibro("978-3-16-148410-0");
         assertNotNull(libro);
-        assertEquals("Clean Code", libro.get().getTitulo());
+        assertEquals("Clean Code", libro.getTitulo());
     }
 
     @Test
     void testBuscarPorIsbnInexistente() {
-        Optional<Libro> libro = catalogo.buscarLibro("978-3-16-148410-1");
-        assertFalse(libro.isPresent());
+        Libro libro = catalogo.buscarLibro("978-3-16-148410-1");
+        assertNull(libro);
     }
 
     @Test
