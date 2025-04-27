@@ -16,13 +16,13 @@ public class Catalogo {
         libros.add(libro);
     }
 
-    public Optional<Libro> buscarLibro(String isbn) {
+    public Libro buscarLibro(String isbn) {
         for (Libro libro : libros) {
             if (libro.getIsbn().equals(isbn)) {
-                return Optional.of(libro);
+                return libro;
             }
         }
-        return Optional.empty();
+        return null;
     }
 
     public List<Libro> getLibrosDisponibles() {
