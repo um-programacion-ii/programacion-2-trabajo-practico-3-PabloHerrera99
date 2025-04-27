@@ -22,7 +22,7 @@ public class Catalogo {
                 return Optional.of(libro);
             }
         }
-        return Optional.empty()
+        return Optional.empty();
     }
 
     public List<Libro> getLibrosDisponibles() {
