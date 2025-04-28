@@ -20,7 +20,7 @@ public class SistemaPrestamos {
     public Prestamo prestarLibro(String isbn) {
         Libro libro = catalogo.buscarLibro(isbn);
         if (libro != null && libro.getEstado() == Estado.DISPONIBLE) {
-            libro.SetEstado(Estado.PRESTADO);
+            libro.setEstado(Estado.PRESTADO);
             Prestamo prestamo = new Prestamo(libro);
             prestamos.add(prestamo);
             return prestamo;
@@ -31,7 +31,7 @@ public class SistemaPrestamos {
     public boolean devolverLibro(String isbn) {
         Libro libro = catalogo.buscarLibro(isbn);
         if (libro != null && libro.getEstado() == Estado.PRESTADO) {
-            libro.SetEstado(Estado.DISPONIBLE);
+            libro.setEstado(Estado.DISPONIBLE);
             Prestamo prestamo = new Prestamo(libro);
             prestamos.add(prestamo);
             return true;

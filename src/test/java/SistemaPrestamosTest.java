@@ -46,7 +46,7 @@ public class SistemaPrestamosTest {
     @Test
     void testPrestarLibroNoDisponible() {
         Libro libro = new Libro("978-3-16-148410-0", "Clean Code", "Robert C. Martin");
-        libro.cambiarEstado(Estado.PRESTADO); // Ya está prestado
+        libro.setEstado(Estado.PRESTADO); // Ya está prestado
         when(catalogo.buscarLibro("978-3-16-148410-0")).thenReturn(libro);
 
         Prestamo prestamo = sistemaPrestamos.prestarLibro("978-3-16-148410-0");
@@ -58,7 +58,7 @@ public class SistemaPrestamosTest {
     @Test
     void testDevolverLibroExitoso() {
         Libro libro = new Libro("978-3-16-148410-0", "Clean Code", "Robert C. Martin");
-        libro.cambiarEstado(Estado.PRESTADO); // El libro está prestado
+        libro.setEstado(Estado.PRESTADO); // El libro está prestado
         when(catalogo.buscarLibro("978-3-16-148410-0")).thenReturn(libro);
 
         boolean resultado = sistemaPrestamos.devolverLibro("978-3-16-148410-0");
@@ -71,7 +71,7 @@ public class SistemaPrestamosTest {
     @Test
     void testDevolverLibroNoPrestado() {
         Libro libro = new Libro("978-3-16-148410-0", "Clean Code", "Robert C. Martin");
-        libro.cambiarEstado(Estado.DISPONIBLE); // Ya disponible
+        libro.setEstado(Estado.DISPONIBLE); // Ya disponible
         when(catalogo.buscarLibro("978-3-16-148410-0")).thenReturn(libro);
 
         boolean resultado = sistemaPrestamos.devolverLibro("978-3-16-148410-0");
