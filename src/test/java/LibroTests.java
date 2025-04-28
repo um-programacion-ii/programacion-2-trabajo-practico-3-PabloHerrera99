@@ -17,7 +17,7 @@ public class LibroTests {
     @Test
     void testCambioEstadoLibro() {
         Libro libro = new Libro("978-3-16-148410-0", "Clean Code", "Robert C. Martin");
-        libro.cambiarEstado(Estado.PRESTADO);
+        libro.setEstado(Estado.PRESTADO);
         assertEquals(Estado.PRESTADO, libro.getEstado());
     }
 }

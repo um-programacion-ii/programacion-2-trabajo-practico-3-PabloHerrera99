@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,7 +37,7 @@ public class CatalogoTest {
 
     @Test
     void testListarDisponibles() {
-        libro1.cambiarEstado(Estado.PRESTADO);
+        libro1.setEstado(Estado.PRESTADO);
         List<Libro> disponibles = catalogo.getLibrosDisponibles();
 
         assertEquals(1, disponibles.size());
