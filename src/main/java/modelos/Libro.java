@@ -39,7 +39,7 @@ public class Libro {
     public Estado getEstado() {
         return estado;
     }
-    public void SetEstado(Estado estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
 
