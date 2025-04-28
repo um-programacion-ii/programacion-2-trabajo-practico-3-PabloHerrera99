@@ -7,12 +7,12 @@ import modelos.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Gestorusuarios {
+public class GestorUsuarios {
     private List<Usuario> usuarios;
     private Catalogo catalogo;
     private SistemaPrestamos sistemaPrestamos;
 
-    public Gestorusuarios(Catalogo catalogo, SistemaPrestamos sistemaPrestamos) {
+    public GestorUsuarios(Catalogo catalogo, SistemaPrestamos sistemaPrestamos) {
         this.usuarios = new ArrayList<>();
         this.catalogo = catalogo;
         this.sistemaPrestamos = sistemaPrestamos;
@@ -28,7 +28,7 @@ public class Gestorusuarios {
     }
 
     public void registrarUsuario(String nombre) {
-        if (buscarUsuario(nombre) == null) {
+        if (buscarUsuario(nombre) != null) {
             throw new IllegalArgumentException("El usuario ya existe");
         }
         usuarios.add(new Usuario(nombre));
